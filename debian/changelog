@@ -1,5 +1,107 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-tinylib-msgp (1.1.9-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints
+
+  [ Mathias Gibbens ]
+  * New upstream release
+  * Update Standards-Version to 4.6.2 in d/control (no changes needed)
+  * Exclude tinygotest in d/rules, as tinygo isn't in Debian
+
+ -- Mathias Gibbens <gibmat@debian.org>  Sat, 11 Nov 2023 17:54:20 +0000
+
+golang-github-tinylib-msgp (1.1.6-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Aloïs Micard ]
+  * update debian/gitlab-ci.yml (using pkg-go-tools/ci-config)
+
+  [ Mathias Gibbens ]
+  * New upstream release
+    - Add patch to skip ancient failing test
+  * d/control:
+    - Update Section to golang
+    - Update Maintainer email address to current team address
+    - Update Build-Depends and Depends
+    - Bump Standards-Version (no changes needed)
+  * Update d/watch version
+
+  [ Tianon Gravi ]
+  * Remove self from Uploaders
+
+ -- Mathias Gibbens <gibmat@debian.org>  Sun, 20 Nov 2022 15:24:32 +0000
+
+golang-github-tinylib-msgp (1.0.2-3) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Alexandre Viau ]
+  * Point Vcs-* urls to salsa.debian.org.
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 11 to 12.
+    Fixes: lintian: package-uses-old-debhelper-compat-version
+    See-also: https://lintian.debian.org/tags/package-uses-old-debhelper-compat-version.html
+  * Set debhelper-compat version in Build-Depends.
+    Fixes: lintian: uses-debhelper-compat-file
+    See-also: https://lintian.debian.org/tags/uses-debhelper-compat-file.html
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository, Repository-Browse.
+    Fixes: lintian: upstream-metadata-file-is-missing
+    See-also: https://lintian.debian.org/tags/upstream-metadata-file-is-missing.html
+
+  [ Dmitry Smirnov ]
+  * Build-Depends += "golang-golang-x-mod-dev" (Closes: #954683)
+  * Rules-Requires-Root: no
+  * golang-ago --> golang-any
+  * Testsuite: autopkgtest-pkg-go
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sat, 11 Apr 2020 16:26:55 +1000
+
+golang-github-tinylib-msgp (1.0.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * Set Built-Using
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Mon, 05 Mar 2018 18:58:38 +0100
+
+golang-github-tinylib-msgp (1.0.2-1) unstable; urgency=medium
+
+  [ Paul Tagliamonte ]
+  * Team upload.
+  * Use a secure transport for the Vcs-Git and Vcs-Browser URL
+
+  [ Tim Potter ]
+  * Add me to uploaders
+
+  [ Jordi Mallach ]
+  * New upstream release (closes: #876820).
+  * Change package priorities to optional.
+  * Move to debhelper compat v11.
+  * Use https on URLs in copyright file.
+  * Update Standards-Version to 4.1.3.
+
+  [ Shengjing Zhu ]
+  * d/rules: copy _generated/search.sh to build.
+
+ -- Jordi Mallach <jordi@debian.org>  Fri, 19 Jan 2018 11:53:28 +0100
+
+golang-github-tinylib-msgp (1.0~beta-1) unstable; urgency=medium
+
+  * Update to 1.0-beta upstream release
+
+ -- Tianon Gravi <tianon@debian.org>  Fri, 23 Oct 2015 16:12:45 -0700
+
+golang-github-tinylib-msgp (1.0~alpha-2) unstable; urgency=medium
+
+  * Add upstream patch to fix 32bit compilation
+
+ -- Tianon Gravi <tianon@debian.org>  Fri, 23 Oct 2015 15:43:51 -0700
+
+golang-github-tinylib-msgp (1.0~alpha-1) unstable; urgency=medium
 
   * Initial release
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Tianon Gravi <tianon@debian.org>  Thu, 22 Oct 2015 11:13:24 -0700

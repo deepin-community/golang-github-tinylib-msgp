@@ -1,0 +1,5 @@
+version=4
+opts=\
+uversionmangle=s/(\d)[_\.\-\+]?((RC|rc|pre|dev|beta|alpha)\d*)$/$1~$2/,\
+filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/msgp-$1\.tar\.gz/ \
+  https://github.com/tinylib/msgp/tags .*/v?(\d\S*)\.tar\.gz

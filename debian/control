@@ -1,15 +1,59 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-tinylib-msgp
+Section: golang
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Tim Potter <tpot@hpe.com>
+Build-Depends: debhelper-compat (= 13),
+               dh-golang,
+               golang-any,
+               golang-github-philhofer-fwd-dev,
+               golang-golang-x-tools-dev
+Standards-Version: 4.6.2
+Homepage: https://github.com/tinylib/msgp
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-tinylib-msgp
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-tinylib-msgp.git
+XS-Go-Import-Path: github.com/tinylib/msgp
+Testsuite: autopkgtest-pkg-go
+Rules-Requires-Root: no
 
-Package: template-repository
+Package: msgp
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: ${misc:Depends},${shlibs:Depends}
+Built-Using: ${misc:Built-Using}
+Description: Go code generator for MessagePack
+ This is a code generation tool and serialization library for MessagePack. It is
+ targeted at the go generate tool. You can read more about MessagePack in the
+ wiki, or at msgpack.org.
+ .
+ Why?
+ .
+   * Use Go as your schema language
+   * Speeeeeed (400MB/s on modern hardware)
+   * JSON interop
+   * User-defined extensions
+   * Type safety
+   * Encoding flexibility
+ .
+ This package contains the tools/binaries.
+
+Package: golang-github-tinylib-msgp-dev
+Architecture: all
+Depends: golang-github-philhofer-fwd-dev,
+         golang-golang-x-tools-dev,
+         ${misc:Depends}
+Multi-Arch: foreign
+Description: Go code generator for MessagePack (source)
+ This is a code generation tool and serialization library for MessagePack. It is
+ targeted at the go generate tool. You can read more about MessagePack in the
+ wiki, or at msgpack.org.
+ .
+ Why?
+ .
+   * Use Go as your schema language
+   * Speeeeeed (400MB/s on modern hardware)
+   * JSON interop
+   * User-defined extensions
+   * Type safety
+   * Encoding flexibility
+ .
+ This package contains the source.
