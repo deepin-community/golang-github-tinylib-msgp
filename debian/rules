@@ -1,4 +1,20 @@
 #!/usr/bin/make -f
 
+export DH_GOLANG_EXCLUDES := tinygotest
+export GOPATH := $(CURDIR)/obj-$(DEB_BUILD_GNU_TYPE)
+
+override_dh_auto_build:
+	# build the "msgp" binary
+	dh_auto_build
+	# DH_GOLANG_INSTALL_EXTRA doesn't preserve file executable mode, so
+	# manually copy it here.
+	cp _generated/search.sh $(GOPATH)/src/github.com/tinylib/msgp/_generated/
+	# use new binary to refresh generated code
+	DH_GOLANG_GO_GENERATE=1 PATH="$(GOPATH)/bin:$$PATH" \
+		dh_auto_build -- github.com/tinylib/msgp/_generated
+
+override_dh_auto_test:
+	dh_auto_test -- github.com/tinylib/msgp/_generated
+
 %:
-	dh $@
+	dh $@ --buildsystem=golang --with=golang
